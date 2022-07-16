@@ -7,6 +7,8 @@
 # General application configuration
 use Mix.Config
 
+config :tesla, adapter: Tesla.Adapter.Hackney
+
 config :api,
   ecto_repos: [Api.Repo]
 

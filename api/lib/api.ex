@@ -1,9 +1,5 @@
 defmodule Api do
-  @moduledoc """
-  Api keeps the contexts that define your domain
-  and business logic.
+  alias Api.Users.Services.HTTPFetch, as: RequestUserRepoData
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
-  """
+  defdelegate request_user_repo(username), to: RequestUserRepoData, as: :call
 end
