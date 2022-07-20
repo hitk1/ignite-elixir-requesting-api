@@ -45,7 +45,9 @@ defmodule Api.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:tesla, "~> 1.4"},
-      {:hackney, "~> 1.17"}
+      {:hackney, "~> 1.17"},
+      {:pbkdf2_elixir, "~> 1.3"},
+      {:guardian, "~> 2.0"}
     ]
   end
 

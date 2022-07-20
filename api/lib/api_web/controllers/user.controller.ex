@@ -12,4 +12,24 @@ defmodule ApiWeb.UserController do
       |> json(list)
     end
   end
+
+  def create(conn, params) do
+    with {:ok, %{id: id}} <- Api.create_user(params) do
+      conn
+      |> put_status(:created)
+      |> json(%{
+        id: id
+      })
+    end
+  end
+
+  def login(conn, params) do
+    with {:ok, token} <- Api.signin_user(params) do
+      conn
+      |> put_status(:ok)
+      |> json(%{
+        token: token
+      })
+    end
+  end
 end

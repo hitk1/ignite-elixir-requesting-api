@@ -12,6 +12,14 @@ config :tesla, adapter: Tesla.Adapter.Hackney
 config :api,
   ecto_repos: [Api.Repo]
 
+config :api, Api.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
+config :api, Api.Users.Services.Signin,
+  issuer: "api",
+  secret_key: "F7Vc49ynhvdFNTiQ/bY7Ywjybkp5O6+/VNNWH0mPcvthchb/GD6azIU/gMc++JHr"
+
 # Configures the endpoint
 config :api, ApiWeb.Endpoint,
   url: [host: "localhost"],

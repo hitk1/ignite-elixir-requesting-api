@@ -9,6 +9,9 @@ defmodule ApiWeb.Router do
     pipe_through(:api)
 
     get("users/:username", UserController, :show)
+
+    post "users", UserController, :create
+    post "users/login", UserController, :login
   end
 
   # Enables LiveDashboard only for development
